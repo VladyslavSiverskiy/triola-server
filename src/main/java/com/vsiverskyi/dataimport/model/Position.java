@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString
 @Table(name = "NPOS")
 public class Position {
 
@@ -47,4 +48,6 @@ public class Position {
     private Double qpre;
     @Column(name = "QPRE22")
     private Double qpre22;
+
+
 }

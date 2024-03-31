@@ -6,10 +6,12 @@ import com.vsiverskyi.dataimport.repository.PositionRepo;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class PositionService {
 
@@ -21,11 +23,19 @@ public class PositionService {
     }
 
     public Position saveOrUpdate(PositionDto positionDto) {
-        return positionRepo.save(modelMapper.map(positionDto, Position.class));
+        System.out.println(positionDto);
+        Position position = modelMapper.map(positionDto, Position.class);
+        System.out.println(position);
+        return positionRepo.save(position);
     }
 
     public Boolean updateCode(PositionDto positionDto, String newCode) {
         positionRepo.updateByCode(positionDto.getCode(), newCode);
+        return true;
+    }
+
+    public Boolean deletePosition(String nposCode) {
+        positionRepo.deleteById(nposCode);
         return true;
     }
 }

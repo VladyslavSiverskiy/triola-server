@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -29,13 +30,12 @@ public class TableUtilsController {
         return entityManager.getMetamodel().getEntities();
     }
 
-    @GetMapping("/table-names")
+    @GetMapping("/tables")
     public ResponseEntity<List<String>> displayTableNames() {
         Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
         List<String> tables = new ArrayList<>();
         for (EntityType<?> entityType : entities) {
             Class<?> entityClass = entityType.getJavaType();
-
             // Check if @Table annotation is present
             if (entityClass.isAnnotationPresent(Table.class)) {
                 Table tableAnnotation = entityClass.getAnnotation(Table.class);
@@ -52,7 +52,6 @@ public class TableUtilsController {
                 System.out.println("Table: " + tableName);
             }
         }
-        System.out.println(tables);
-        return ResponseEntity.ok(tables);
+        return ResponseEntity.ok(tables.stream().map(String::toLowerCase).collect(Collectors.toList()));
     }
 }
