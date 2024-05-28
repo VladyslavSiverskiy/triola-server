@@ -1,11 +1,12 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.balance.Balance;
 import lombok.Value;
 
 import java.io.Serializable;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.balance.Balance}
+ * DTO for {@link Balance}
  */
 @Value
 public class BalanceDto implements Serializable {

@@ -1,12 +1,12 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.Position;
 import lombok.*;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Position}
+ * DTO for {@link Position}
  */
 @Data
 @AllArgsConstructor

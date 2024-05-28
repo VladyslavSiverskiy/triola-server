@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.Mnar;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Mnar}
+ * DTO for {@link Mnar}
  */
 @Value
 public class MnarDto implements Serializable {

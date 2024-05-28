@@ -2,20 +2,20 @@ package com.vsiverskyi.app.controller;
 
 import com.vsiverskyi.app.dto.PositionDto;
 import com.vsiverskyi.app.dto.PositionGroupDto;
-import com.vsiverskyi.dataimport.model.Position;
-import com.vsiverskyi.dataimport.model.groups.PositionGroup;
-import com.vsiverskyi.dataimport.service.PositionGroupService;
-import com.vsiverskyi.dataimport.service.PositionService;
-import lombok.Getter;
+import com.vsiverskyi.app.model.Position;
+import com.vsiverskyi.app.model.groups.PositionGroup;
+import com.vsiverskyi.app.service.PositionGroupService;
+import com.vsiverskyi.app.service.PositionService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @RestController
 @RequestMapping("/npos")
 @RequiredArgsConstructor
@@ -41,11 +41,13 @@ public class NposController {
                 .collect(Collectors.toList()));
     }
 
-    @PostMapping
-    public ResponseEntity<Boolean> updatePosition(@RequestBody PositionDto positionDto) {
-        System.out.println("UPDATING...");
-        positionService.saveOrUpdate(positionDto);
-        return ResponseEntity.ok(true);
+    @PostMapping // Процедура, що буде виконана при надсиланні POST HTTP запиту на визначену адресу
+    public ResponseEntity<Boolean> updatePosition(@RequestBody PositionDto positionDto) { // вхідний JSON
+        log.info("Оновлення посади з кодом"
+                 + positionDto.getCode()); // логування інформації про оновлення запису
+        positionService.saveOrUpdate(positionDto); // використання сервісного рівня для оновлення посади
+        log.info("Посаду з кодом " + positionDto.getCode() + " було оновлено");
+        return ResponseEntity.ok(true); // повернути клієнту відповідь про оновлення
     }
 
     @GetMapping("/{nposCode}/delete")

@@ -1,13 +1,13 @@
 package com.vsiverskyi.app.dto;
 
-import com.vsiverskyi.dataimport.model.DdokKey;
+import com.vsiverskyi.app.model.Ddok;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Ddok}
+ * DTO for {@link Ddok}
  */
 @Value
 public class DdokDto implements Serializable {

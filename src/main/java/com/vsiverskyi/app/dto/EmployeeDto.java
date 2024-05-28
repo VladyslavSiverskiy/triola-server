@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.Employee;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Employee}
+ * DTO for {@link Employee}
  */
 @Value
 public class EmployeeDto implements Serializable {

@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.Mutr;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Mutr}
+ * DTO for {@link Mutr}
  */
 @Value
 public class MutrDto implements Serializable {

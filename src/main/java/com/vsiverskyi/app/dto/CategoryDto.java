@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.Category;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.Category}
+ * DTO for {@link Category}
  */
 @Value
 public class CategoryDto implements Serializable {

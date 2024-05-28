@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.DutrKey;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.DutrKey}
+ * DTO for {@link DutrKey}
  */
 @Value
 public class DutrKeyDto implements Serializable {

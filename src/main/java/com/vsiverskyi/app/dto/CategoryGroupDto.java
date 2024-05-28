@@ -1,11 +1,12 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.groups.CategoryGroup;
 import lombok.Value;
 
 import java.io.Serializable;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.groups.CategoryGroup}
+ * DTO for {@link CategoryGroup}
  */
 @Value
 public class CategoryGroupDto implements Serializable {

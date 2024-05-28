@@ -1,11 +1,10 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.groups.PositionGroup;
 import lombok.*;
 
-import java.io.Serializable;
-
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.groups.PositionGroup}
+ * DTO for {@link PositionGroup}
  */
 @Data
 @AllArgsConstructor

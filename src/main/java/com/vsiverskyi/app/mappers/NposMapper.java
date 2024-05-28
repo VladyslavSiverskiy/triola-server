@@ -1,8 +1,8 @@
 package com.vsiverskyi.app.mappers;
 
 import com.vsiverskyi.app.dto.PositionDto;
-import com.vsiverskyi.dataimport.model.Position;
-import com.vsiverskyi.dataimport.model.groups.PositionGroup;
+import com.vsiverskyi.app.model.Position;
+import com.vsiverskyi.app.model.groups.PositionGroup;
 import org.modelmapper.AbstractConverter;
 import org.springframework.stereotype.Component;
 

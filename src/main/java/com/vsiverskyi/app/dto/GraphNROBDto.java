@@ -1,12 +1,13 @@
 package com.vsiverskyi.app.dto;
 
+import com.vsiverskyi.app.model.graphs.GraphNROB;
 import lombok.Value;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
- * DTO for {@link com.vsiverskyi.dataimport.model.graphs.GraphNROB}
+ * DTO for {@link GraphNROB}
  */
 @Value
 public class GraphNROBDto implements Serializable {
